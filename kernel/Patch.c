@@ -1525,7 +1525,7 @@ void DoPatches( char *Buffer, u32 Length, u32 DiscOffset )
 			write32(0x00000098, 0x480053A5);
 			write32(0x0000009C, 0x48005388);
 		}
-		else if( TITLE_ID == 0x47465A && read32(0x5608) == 0x3C804C00 )
+		else if( (TITLE_ID == 0x47465A || TITLE_ID == 0x58465A || TITLE_ID == 0x54465A || TITLE_ID == 0x55465A) && read32(0x5608) == 0x3C804C00 )
 		{
 			dbgprintf("Patch:[F-Zero GX Low Mem] applied\r\n");
 			// dont write "rfi" into 0x1000, 0x1100, 0x1200 and 0x1300
